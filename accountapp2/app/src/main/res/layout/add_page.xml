@@ -88,16 +88,16 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        >
+        tools:layout_editor_absoluteX="-16dp">
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/textView30"
             android:layout_width="129dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -108,7 +108,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/editText31"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_weight="12"
@@ -118,6 +118,72 @@
             android:text="2019.07.01"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="129dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="금액"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/input_money"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_weight="12"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="100000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:layout_editor_absoluteX="-2dp">
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="129dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:gravity="center"
+            android:text="내용"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/input_info"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_weight="12"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:text="Name"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="381dp" />
+
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
