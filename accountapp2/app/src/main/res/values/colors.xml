@@ -11,5 +11,7 @@
     <color name="bluefont">#5D76FB</color>
     <color name="redfont">#F15353</color>
     <color name="darkbrown">#D3B18E</color>
+    <color name="white">#ffffff</color>
+    <color name="lightgrey">#F5F5F5</color>
 
 </resources>
