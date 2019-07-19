@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@color/brown"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="가계부"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/this_month"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.444" />
+
+        <ImageView
+            android:id="@+id/before_month"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/this_month"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/before_month" />
+
+        <TextView
+            android:id="@+id/this_month"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="2019.07"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/background_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/next_month"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/before_month" />
+
+        <ImageView
+            android:id="@+id/next_month"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/this_month"
+            app:srcCompat="@drawable/after_month" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="520dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintVertical_bias="0.448">
+
+        <ImageView
+            android:id="@+id/accountbox2"
+            android:layout_width="match_parent"
+            android:layout_height="440dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-8dp"
+            app:srcCompat="@drawable/aoountbox" />
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/accountbox2"
+            android:layout_alignTop="@+id/accountbox2"
+            android:layout_alignRight="@+id/accountbox2"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="300dp"
+            android:gravity="left"
+            android:text="수입"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/money_in"
+            android:layout_width="196dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/accountbox2"
+            android:layout_alignTop="@+id/accountbox2"
+            android:layout_alignRight="@+id/accountbox2"
+            android:layout_marginLeft="153dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="50dp"
+            android:gravity="right"
+            android:text="+ 1,500,000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/bluefont" />
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/accountbox2"
+            android:layout_alignTop="@+id/accountbox2"
+            android:layout_alignRight="@+id/accountbox2"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="185dp"
+            android:layout_marginRight="300dp"
+            android:gravity="left"
+            android:text="지출"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/money_out"
+            android:layout_width="196dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/accountbox2"
+            android:layout_alignTop="@+id/accountbox2"
+            android:layout_alignRight="@+id/accountbox2"
+            android:layout_marginLeft="153dp"
+            android:layout_marginTop="185dp"
+            android:layout_marginRight="50dp"
+            android:gravity="right"
+            android:text="- 1,000,000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/redfont" />
+
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/accountbox2"
+            android:layout_alignTop="@+id/accountbox2"
+            android:layout_alignRight="@+id/accountbox2"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="315dp"
+            android:layout_marginRight="300dp"
+            android:gravity="left"
+            android:text="합계"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
+        <TextView
+            android:id="@+id/money_sum"
+            android:layout_width="196dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/accountbox2"
+            android:layout_alignTop="@+id/accountbox2"
+            android:layout_alignRight="@+id/accountbox2"
+            android:layout_marginLeft="153dp"
+            android:layout_marginTop="315dp"
+            android:layout_marginRight="50dp"
+            android:gravity="right"
+            android:text="500,000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/greyfont" />
+
+        <ImageView
+            android:id="@+id/btn_add"
+            android:layout_width="79dp"
+            android:layout_height="76dp"
+            android:layout_alignLeft="@+id/accountbox2"
+            android:layout_alignTop="@+id/accountbox2"
+            android:layout_alignRight="@+id/accountbox2"
+            android:layout_marginLeft="221dp"
+            android:layout_marginTop="402dp"
+            android:layout_marginRight="95dp"
+            android:clickable="true"
+            app:srcCompat="@drawable/addbtn" />
+
+        <ImageView
+            android:id="@+id/btn_list"
+            android:layout_width="79dp"
+            android:layout_height="76dp"
+            android:layout_alignLeft="@+id/accountbox2"
+            android:layout_alignTop="@+id/accountbox2"
+            android:layout_alignRight="@+id/accountbox2"
+            android:layout_marginLeft="301dp"
+            android:layout_marginTop="402dp"
+            android:layout_marginRight="15dp"
+            android:clickable="true"
+            app:srcCompat="@drawable/listbtn" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
