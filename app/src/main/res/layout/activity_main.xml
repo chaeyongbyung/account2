@@ -54,16 +54,16 @@
             android:layout_height="30dp"
             android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:text="2019.07"
+            android:text="날짜"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/next_month"
+            app:layout_constraintEnd_toStartOf="@+id/after_month"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/before_month" />
 
         <ImageView
-            android:id="@+id/next_month"
+            android:id="@+id/after_month"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginEnd="8dp"

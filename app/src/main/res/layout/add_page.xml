@@ -131,13 +131,14 @@
                 android:text="날짜"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/input_date"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:textAlignment="center"
-                android:hint="2019.07.01"
+                android:onClick="OnClickHandler"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:ems="10"
                 android:inputType="date" />
@@ -164,7 +165,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:hint="100000"
+                android:hint="10000원"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:ems="10"
@@ -196,7 +197,6 @@
                     android:id="@+id/input_info"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="내용"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
             </com.google.android.material.textfield.TextInputLayout>
