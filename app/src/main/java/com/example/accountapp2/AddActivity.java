@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -20,9 +21,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AddActivity extends AppCompatActivity {
 
     Calendar cal = new GregorianCalendar();
-    int mYear = cal.get(Calendar.YEAR);
-    int mMonth = cal.get(Calendar.MONTH);
-    int mDay = cal.get(Calendar.DAY_OF_MONTH);
+    Date pickedDate = cal.getTime();
+    DateFormat dbdf = new SimpleDateFormat("yyyyMMdd");
+    DateFormat showdf = new SimpleDateFormat("yyyy년 MM월 dd일");
 
     private TextView input_date;
     private DatePickerDialog.OnDateSetListener callbackMethod;
@@ -65,7 +66,9 @@ public class AddActivity extends AppCompatActivity {
         setContentView(R.layout.add_page);
 
         input_date = (TextView)findViewById(R.id.input_date);
-        input_date.setText(String.format("%d년 %d월 %d일", mYear,mMonth + 1,mDay));
+
+        String pickDay = showdf.format(pickedDate);
+        input_date.setText(pickDay);
 
         //달력에서 값받기
         this.InitializeView();
@@ -112,18 +115,17 @@ public class AddActivity extends AppCompatActivity {
             public void onDateSet(DatePicker datePicker, int year, int month, int day)
             {
 
-                mYear = year;
-                mMonth = month;
-                mDay = day;
-                input_date.setText(String.format("%d년 %d월 %d일", mYear,mMonth + 1,mDay));
-
+                cal.set(year,month,day);
+                pickedDate = cal.getTime();
+                String pickDay = showdf.format(pickedDate);
+                input_date.setText(pickDay);
             }
         };
     }
 
     public void OnClickHandler(View view)
     {
-        DatePickerDialog dialog = new DatePickerDialog(this, callbackMethod, mYear, mMonth , mDay);
+        DatePickerDialog dialog = new DatePickerDialog(this, callbackMethod, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) , cal.get(Calendar.DATE));
 
         dialog.show();
     }

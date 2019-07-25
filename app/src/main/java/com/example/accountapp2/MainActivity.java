@@ -13,7 +13,10 @@ import android.widget.DatePicker;
 
 import org.w3c.dom.Text;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 
@@ -21,9 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
     TextView this_month;
     Calendar cal = new GregorianCalendar();
-    int mYear = cal.get(Calendar.YEAR);
-    int mMonth = cal.get(Calendar.MONTH) + 1;
-    int mDay = cal.get(Calendar.DAY_OF_MONTH);
+    Date pickedDate = cal.getTime();
+
+    DateFormat dbdf = new SimpleDateFormat("yyyyMMdd");
+    DateFormat showdf = new SimpleDateFormat("yyyy년 MM월");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = null;
         switch(view.getId()){
         case R.id.this_month:
-            new DatePickerDialog(MainActivity.this, mDateSetListener, mYear, mMonth, mDay).show();
+
             break;
         case R.id.btn_add:
             intent =new Intent(MainActivity.this, AddActivity.class);
@@ -62,39 +67,27 @@ public class MainActivity extends AppCompatActivity {
     class MyListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            this_month = (TextView) findViewById(R.id.this_month);
             switch (view.getId()) {
                 case R.id.before_month:
-                    mMonth -= 1;
+                    cal.setTime(pickedDate);
+                    cal.add(Calendar.MONTH, -1);
+                    pickedDate = cal.getTime();
                     UpdateNow();
                     break;
                 case R.id.after_month:
-                    mMonth += 1;
+                    cal.setTime(pickedDate);
+                    cal.add(Calendar.MONTH, 1);
+                    pickedDate = cal.getTime();
                     UpdateNow();
                     break;
             }
         }
     }
 
-    DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-
-            mYear = year;
-
-            mMonth = monthOfYear;
-
-            mDay = dayOfMonth;
-
-            UpdateNow();
-        }
-    };
-
-
-
     void UpdateNow(){
 
-        this_month.setText(String.format("%d년 %d월", mYear, mMonth));
+        String pickDay = showdf.format(pickedDate);
+        this_month.setText(pickDay);
 
     }
 
