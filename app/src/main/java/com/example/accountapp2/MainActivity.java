@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -26,8 +27,13 @@ public class MainActivity extends AppCompatActivity {
     Calendar cal = new GregorianCalendar();
     Date pickedDate = cal.getTime();
 
+    String pickYear;
+    String pickMonth;
+
     DateFormat dbdf = new SimpleDateFormat("yyyyMMdd");
     DateFormat showdf = new SimpleDateFormat("yyyy년 MM월");
+    DateFormat yeardf = new SimpleDateFormat("yyyy");
+    DateFormat monthdf = new SimpleDateFormat("MM");
 
 
     @Override
@@ -85,10 +91,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void UpdateNow(){
-
+        pickYear = yeardf.format(pickedDate);
+        pickMonth = monthdf.format(pickedDate);
         String pickDay = showdf.format(pickedDate);
         this_month.setText(pickDay);
+        Toast.makeText(this, pickYear + pickMonth, Toast.LENGTH_SHORT).show();
 
     }
 
-}
+} 
